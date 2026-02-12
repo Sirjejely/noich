@@ -203,13 +203,12 @@ export default function ContactPage() {
             </div>
           ) : (
             <form
-              name="contact"
+              action="/api/contact"
               method="POST"
-              data-netlify="true"
-              data-netlify-honeypot="bot-field"
               onSubmit={() => setTimeout(() => setFormStatus('success'), 600)}
               className="space-y-6"
             >
+
               <input type="hidden" name="form-name" value="contact" />
 
               <p className="hidden">
