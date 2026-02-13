@@ -22,7 +22,7 @@ export async function POST(req: Request) {
     const sendResult = await resend.emails.send({
       // This sender is allowed on Resend for testing.
       from: 'NOCIH Website <onboarding@resend.dev>',
-      to: ['fe.asuquo@yahoo.com', 'chodasolid@gmail.com'],
+      to: ['chodasolid@gmail.com'],
       replyTo: email || undefined,
       subject,
       text: `Name: ${name}\nEmail: ${email}\nInterest: ${interest}\n\nMessage:\n${message}`,
