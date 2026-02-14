@@ -7,36 +7,40 @@ const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function POST(req: Request) {
   try {
-    if (!process.env.RESEND_API_KEY) {
-      return NextResponse.json({ ok: false, error: 'Missing RESEND_API_KEY' }, { status: 500 });
-    }
-
     const form = await req.formData();
+
     const name = String(form.get('name') || '').trim();
     const email = String(form.get('email') || '').trim();
     const interest = String(form.get('interest') || '').trim();
     const message = String(form.get('message') || '').trim();
 
-    const subject = `New message from noich.org${interest ? ` — ${interest}` : ''}`;
+    const subject = `New message from NOCIH website${interest ? ` — ${interest}` : ''}`;
 
-    const sendResult = await resend.emails.send({
-      // This sender is allowed on Resend for testing.
-      from: 'NOCIH Website <onboarding@resend.dev>',
-      to: ['chodasolid@gmail.com'],
+    const { error } = await resend.emails.send({
+      from: 'NOCIH <info@nocih.org>',
+      to: ['fe.asuquo@yahoo.com', 'chodasolid@gmail.com'],
       replyTo: email || undefined,
       subject,
-      text: `Name: ${name}\nEmail: ${email}\nInterest: ${interest}\n\nMessage:\n${message}`,
+      text: `
+New Contact Message — NOCIH
+
+Name: ${name}
+Email: ${email}
+Interest: ${interest || '—'}
+
+Message:
+${message}
+      `,
     });
 
-    // If Resend returns an error, surface it
-    if ((sendResult as any)?.error) {
-      console.error('Resend error:', (sendResult as any).error);
-      return NextResponse.json({ ok: false, error: (sendResult as any).error }, { status: 500 });
+    if (error) {
+      console.error('Resend error:', error);
+      return NextResponse.json({ ok: false }, { status: 500 });
     }
 
     return NextResponse.json({ ok: true });
   } catch (err) {
-    console.error('Email send failed:', err);
+    console.error('Contact API error:', err);
     return NextResponse.json({ ok: false }, { status: 500 });
   }
 }
