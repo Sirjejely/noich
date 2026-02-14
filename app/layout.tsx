@@ -5,12 +5,17 @@ import WhatsAppFloat from '@/components/WhatsAppFloat';
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
-      <body className="bg-slate-950 text-white min-h-screen">
+    <html lang="en" className="bg-slate-950">
+      <body className="min-h-screen bg-slate-950 text-white">
         <WhatsAppFloat />
 
         <Navbar />
-        <main className="pt-24 pb-24">{children}</main>
+
+        {/* Important: give main its own background */}
+        <main className="pt-24 pb-24 bg-slate-950">
+          {children}
+        </main>
+
         <Footer />
       </body>
     </html>
