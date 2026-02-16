@@ -9,6 +9,7 @@ const nav = [
   { name: 'About', href: '/about' },
   { name: 'Our Work', href: '/work' },
   { name: 'Team', href: '/team' },
+  { name: 'News', href: '/news', isNew: true },
   { name: 'Get Involved', href: '/contact' },
 ];
 
@@ -43,9 +44,18 @@ export default function Navbar() {
             alt="Nigeria flag"
             className="h-10 md:h-11 w-auto rounded-sm border border-white/10 shadow-sm mr-1"
           />
+
           {nav.map((item) => (
             <Link key={item.href} href={item.href} className={linkClass(item.href)}>
-              {item.name}
+              <span className="flex items-center gap-2">
+                {item.isNew && (
+                  <span className="relative inline-flex items-center">
+                    <span className="text-lg leading-none">📣</span>
+                    <span className="absolute -top-1 -right-1 h-2.5 w-2.5 rounded-full bg-red-500 animate-pulse" />
+                  </span>
+                )}
+                {item.name}
+              </span>
             </Link>
           ))}
         </div>
@@ -65,10 +75,11 @@ export default function Navbar() {
         <div className="md:hidden px-4 sm:px-6 pb-5">
           <div className="flex flex-col gap-4 pt-2 items-start">
             <img
-              src="/images/nigeria-flag.gif"
+              src="/images/nigeria.gif"
               alt="Nigeria flag"
               className="h-10 w-auto rounded-sm border border-white/10 shadow-sm"
             />
+
             {nav.map((item) => (
               <Link
                 key={item.href}
@@ -76,7 +87,15 @@ export default function Navbar() {
                 className={linkClass(item.href)}
                 onClick={() => setMobileOpen(false)}
               >
-                {item.name}
+                <span className="flex items-center gap-2">
+                  {item.isNew && (
+                    <span className="relative inline-flex items-center">
+                      <span className="text-lg leading-none">📣</span>
+                      <span className="absolute -top-1 -right-1 h-2.5 w-2.5 rounded-full bg-red-500 animate-pulse" />
+                    </span>
+                  )}
+                  {item.name}
+                </span>
               </Link>
             ))}
           </div>
