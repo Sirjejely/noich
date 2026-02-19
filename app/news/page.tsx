@@ -21,7 +21,7 @@ const posts: NewsPost[] = [
     title:
       "Support from The Ocean Foundation (TOF) Inc., USA for the BIOTTA Ocean Acidification Project in the Gulf of Guinea",
     excerpt:
-      "On 11 February 2026, our partner and Scientific Advisor, Prof. Francis Emile Asuquo, received scientific equipment worth more than $20,000 from The Ocean Foundation (USA) under the BIOTTA Project—strengthening ocean acidification monitoring, capacity building, and SDG 14.3.1-aligned data generation in the Gulf of Guinea.",
+      "On 11 February 2026, our partner and Scientific Advisor, Prof. Francis Emile Asuquo, received scientific equipment worth more than $20,000 from The Ocean Foundation (USA) under the BIOTTA Project—strengthening ocean acidification monitoring, capacity building, and SDG 14.3.1-aligned data generation in the Gulf of Guinea. Professor Asuquo is the Focal Point of OA-BIOTTA project in Nigeria. ",
     image: "/images/grant.jpg",
     // href: "/news/biotta-grant",
   },
