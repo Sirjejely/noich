@@ -7,8 +7,8 @@ type NewsPost = {
   dateLabel: string;
   category: string;
   tag?: string;
-  image?: string; // path under /public
-  href?: string; // future detail page
+  image?: string;
+  href?: string;
   featured?: boolean;
 };
 
@@ -21,20 +21,21 @@ const posts: NewsPost[] = [
     title:
       "Support from The Ocean Foundation (TOF) Inc., USA for the BIOTTA Ocean Acidification Project in the Gulf of Guinea",
     excerpt:
-      "On 11 February 2026, our partner and Scientific Advisor, Prof. Francis Emile Asuquo, received scientific equipment worth more than $20,000 from The Ocean Foundation (USA) under the BIOTTA Project—strengthening ocean acidification monitoring, capacity building, and SDG 14.3.1-aligned data generation in the Gulf of Guinea. Professor Asuquo is the Focal Point of OA-BIOTTA project in Nigeria. ",
+      "On 11 February 2026, our partner and Scientific Advisor, Prof. Francis Emile Asuquo, received scientific equipment worth more than $20,000 from The Ocean Foundation (USA) under the BIOTTA Project—strengthening ocean acidification monitoring, capacity building, and SDG 14.3.1-aligned data generation in the Gulf of Guinea.",
     image: "/images/grant.jpg",
-    // href: "/news/biotta-grant",
   },
 
-  // Placeholders you can replace later:
   {
-    category: "Field Activity",
-    tag: "Monitoring",
-    dateLabel: "Coming soon",
-    title: "Gulf of Guinea field monitoring updates",
+    category: "Field & Laboratory",
+    tag: "OA Monitoring Campaign",
+    dateLabel: "February 2026 • Tropical South Atlantic Ocean",
+    title:
+      "Ocean Acidification Monitoring Campaign by NOCIH–UNICAL Team",
     excerpt:
-      "Highlights from deployments, sampling, and instrumentation work across our project sites.",
+      "A combined team from NOCIH and the University of Calabar (UNICAL) conducted field sampling and laboratory analysis of ocean acidification parameters across coastal waters of the Tropical South Atlantic. This campaign strengthens regional monitoring capacity and advances SDG 14.3.1 data generation.",
+    image: "/images/labana1.jpg",
   },
+
   {
     category: "Research",
     tag: "Data",
@@ -43,6 +44,7 @@ const posts: NewsPost[] = [
     excerpt:
       "Progress on quality control, indicator reporting, and early observations relevant to SDG 14.3.1.",
   },
+
   {
     category: "Community",
     tag: "Awareness",
@@ -78,217 +80,161 @@ function Badge({
   );
 }
 
+/* 🔥 BEAUTIFUL FLUID GALLERY */
+function FluidImageGallery() {
+  const images = [
+    "/images/labana1.jpg",
+    "/images/labana2.jpg",
+    "/images/labana3.jpg",
+    "/images/labana4.jpg",
+    "/images/fieldtrip1.jpg",
+    "/images/fieldtrip2.jpg",
+    "/images/fieldtrip3.jpg",
+    "/images/fieldtrip4.jpg",
+  ];
+
+  return (
+    <div className="mt-12">
+      <h3 className="text-2xl md:text-3xl font-semibold mb-6">
+        Field & Laboratory Highlights
+      </h3>
+
+      <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+        {images.map((src, i) => (
+          <div
+            key={i}
+            className="group relative overflow-hidden rounded-2xl border border-white/10 bg-slate-800/40 backdrop-blur transition-all duration-500 hover:scale-[1.02]"
+          >
+            <div className="relative w-full h-56">
+              <Image
+                src={src}
+                alt="Ocean Acidification monitoring activity"
+                fill
+                className="object-cover transition-transform duration-700 group-hover:scale-110"
+              />
+            </div>
+
+            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent opacity-0 group-hover:opacity-100 transition duration-500" />
+
+            <div className="absolute bottom-3 left-3 right-3 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition duration-500">
+              <p className="text-xs text-white/90">
+                OA Monitoring • NOCIH × UNICAL • Feb 2026
+              </p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
 export default function NewsPage() {
   return (
-    // lighter background
     <div className="min-h-screen text-white bg-slate-900">
       {/* HERO */}
       <section className="relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-blue-900/40 via-slate-900 to-slate-900" />
-        <div className="relative z-10 max-w-6xl mx-auto px-6 pt-20 pb-10 md:pt-24 md:pb-12">
-          <div className="flex flex-col items-center text-center">
-            <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/10 px-4 py-2 text-sm text-slate-100 backdrop-blur">
-              <span className="text-lg">📰</span>
-              <span>NOCIH Newsroom</span>
-            </div>
-
-            <h1 className="mt-6 text-5xl md:text-6xl font-bold">
-              News & Updates
-            </h1>
-
-            <p className="mt-5 max-w-2xl text-xl md:text-2xl text-slate-200">
-              Stories, progress updates, partnerships, and field activities from
-              the Nigeria Ocean-Climate Innovation Hub.
-            </p>
+        <div className="relative z-10 max-w-6xl mx-auto px-6 pt-20 pb-12 text-center">
+          <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/10 px-4 py-2 text-sm backdrop-blur">
+            📰 NOCIH Newsroom
           </div>
+
+          <h1 className="mt-6 text-5xl md:text-6xl font-bold">
+            News & Updates
+          </h1>
+
+          <p className="mt-5 max-w-2xl mx-auto text-xl text-slate-200">
+            Stories, scientific progress, partnerships, and field activities
+            from the Nigeria Ocean-Climate Innovation Hub.
+          </p>
         </div>
       </section>
 
-      {/* MAIN */}
-      <section className="max-w-6xl mx-auto px-6 pb-28">
-        {/* FEATURED */}
+      {/* FEATURED */}
+      <section className="max-w-6xl mx-auto px-6">
         {featured && (
           <article className="overflow-hidden rounded-3xl border border-white/10 bg-white/10 backdrop-blur-md">
             <div className="grid lg:grid-cols-5">
-              {/* image */}
-              <div className="relative lg:col-span-3 bg-slate-800 flex items-center justify-center p-4">
-                {featured.image ? (
-                  <>
-                    <div className="relative w-full h-[340px] md:h-[460px] lg:h-[560px]">
-                      <Image
-                        src={featured.image}
-                        alt="BIOTTA project equipment received at the University of Calabar"
-                        fill
-                        className="object-contain"
-                        priority
-                      />
-                    </div>
-
-                    {/* subtle bottom gradient for caption readability */}
-                    <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-slate-950/70 to-transparent" />
-
-                    <div className="absolute bottom-4 left-4 right-4">
-                      <p className="text-xs md:text-sm text-slate-100/90">
-                        Prof. Francis Emile Asuquo (2nd left) and Prof. Francis
-                        Nwosu (4th left) with staff receiving BIOTTA equipment on
-                        arrival at the University of Calabar, Nigeria.
-                      </p>
-                    </div>
-                  </>
-                ) : (
-                  <div className="h-[340px] md:h-[460px] lg:h-[560px] w-full bg-slate-800/60" />
-                )}
+              <div className="relative lg:col-span-3 h-[400px] md:h-[520px]">
+                <Image
+                  src={featured.image!}
+                  alt="Featured"
+                  fill
+                  className="object-contain"
+                />
               </div>
 
-              {/* text */}
-              <div className="lg:col-span-2 p-8 md:p-10">
-                <div className="flex flex-wrap items-center gap-2">
+              <div className="lg:col-span-2 p-8">
+                <div className="flex gap-2 flex-wrap">
                   <Badge tone="blue">{featured.category}</Badge>
-                  {featured.tag ? (
-                    <Badge tone="emerald">{featured.tag}</Badge>
-                  ) : null}
+                  <Badge tone="emerald">{featured.tag}</Badge>
                 </div>
 
-                <p className="mt-4 text-sm text-slate-200">
-                  <span className="text-slate-100 font-medium">Featured</span>{" "}
-                  • {featured.dateLabel}
+                <p className="mt-3 text-sm text-slate-300">
+                  Featured • {featured.dateLabel}
                 </p>
 
-                <h2 className="mt-4 text-3xl md:text-4xl font-semibold leading-tight">
+                <h2 className="mt-4 text-3xl font-semibold">
                   {featured.title}
                 </h2>
 
-                {/* Make intro closer + bigger */}
-                <p className="mt-3 text-base md:text-lg text-slate-200 leading-relaxed">
+                <p className="mt-4 text-slate-200">
                   {featured.excerpt}
                 </p>
-
-                <div className="mt-6 rounded-2xl border border-white/10 bg-slate-950/30 p-5">
-                  <h3 className="text-sm font-semibold text-slate-100">
-                    Key highlights
-                  </h3>
-                  <ul className="mt-3 space-y-2 text-sm text-slate-200 list-disc pl-5">
-                    <li>Equipment support valued at over $20,000</li>
-                    <li>Pilot monitoring of OA levels and ecosystem effects</li>
-                    <li>Capacity building and stakeholder awareness</li>
-                    <li>SDG 14.3.1-aligned data generation</li>
-                  </ul>
-                </div>
-
-                <p className="mt-5 text-slate-200 leading-relaxed">
-                  <span className="text-slate-100 font-medium">
-                    NOCIH scientific personnel
-                  </span>{" "}
-                  will be fully involved in the project.
-                </p>
-
-                {featured.href ? (
-                  <div className="mt-8">
-                    <Link
-                      href={featured.href}
-                      className="inline-flex items-center justify-center rounded-full border border-white/10 bg-white/10 px-5 py-3 text-sm font-medium text-slate-100 hover:bg-white/15 hover:border-blue-400/30 transition"
-                    >
-                      Read full story →
-                    </Link>
-                  </div>
-                ) : null}
               </div>
             </div>
           </article>
         )}
+      </section>
 
-        {/* LATEST + SIDEBAR */}
-        <div className="mt-10 grid gap-8 lg:grid-cols-3">
-          {/* Latest Updates */}
-          <div className="lg:col-span-2">
-            <div className="flex items-end justify-between gap-4">
-              <div>
-                <h3 className="text-2xl md:text-3xl font-semibold">
-                  Latest updates
-                </h3>
-                <p className="mt-2 text-slate-200">
-                  More news posts will appear here as we publish updates.
-                </p>
-              </div>
-            </div>
+      {/* 🔥 FIELD + LAB SECTION */}
+      <section className="max-w-6xl mx-auto px-6 mt-16">
+        <div className="rounded-3xl border border-white/10 bg-white/5 backdrop-blur-md p-8 md:p-10">
+          <h2 className="text-3xl md:text-4xl font-semibold">
+            Field Monitoring & Laboratory Analysis
+          </h2>
 
-            <div className="mt-6 grid gap-5 sm:grid-cols-2">
-              {latest.map((p) => (
-                <div
-                  key={p.title}
-                  className="rounded-3xl border border-white/10 bg-white/10 backdrop-blur-md p-6 hover:bg-white/15 transition"
-                >
-                  <div className="flex flex-wrap items-center gap-2">
-                    <Badge tone="blue">{p.category}</Badge>
-                    {p.tag ? <Badge tone="slate">{p.tag}</Badge> : null}
-                  </div>
+          <p className="mt-4 text-slate-200 max-w-3xl">
+            These images capture real-time field sampling and laboratory
+            analysis conducted by the combined NOCIH and University of Calabar
+            (UNICAL) Ocean Acidification team in February 2026 across the
+            Tropical South Atlantic coastal waters. Activities include in-situ
+            measurements, sample handling, and analytical procedures supporting
+            SDG 14.3.1 data generation.
+          </p>
 
-                  <p className="mt-3 text-xs text-slate-300">{p.dateLabel}</p>
+          <FluidImageGallery />
+        </div>
+      </section>
 
-                  <h4 className="mt-3 text-lg font-semibold leading-snug">
-                    {p.title}
-                  </h4>
+      {/* LATEST */}
+      <section className="max-w-6xl mx-auto px-6 mt-16 pb-24">
+        <h3 className="text-2xl font-semibold mb-6">Latest updates</h3>
 
-                  <p className="mt-3 text-sm text-slate-200 leading-relaxed">
-                    {p.excerpt}
-                  </p>
-
-                  {p.href ? (
-                    <div className="mt-5">
-                      <Link
-                        href={p.href}
-                        className="text-sm font-medium text-blue-200 hover:text-blue-100"
-                      >
-                        Read more →
-                      </Link>
-                    </div>
-                  ) : (
-                    <div className="mt-5 text-sm font-medium text-slate-300">
-                      Read more →
-                    </div>
-                  )}
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Sidebar */}
-          <aside className="rounded-3xl border border-white/10 bg-white/10 backdrop-blur-md p-7 h-fit">
-            <h3 className="text-xl font-semibold">Quick facts</h3>
-
-            <div className="mt-5 space-y-4 text-sm text-slate-200">
-              <div className="rounded-2xl border border-white/10 bg-slate-950/25 p-4">
-                <p className="text-slate-100 font-medium">BIOTTA Project focus</p>
-                <p className="mt-1">
-                  Capacity building and reliable OA monitoring data for West
-                  Africa.
-                </p>
+        <div className="grid gap-6 sm:grid-cols-2">
+          {latest.map((p) => (
+            <div
+              key={p.title}
+              className="rounded-2xl border border-white/10 bg-white/10 p-6 backdrop-blur hover:bg-white/15 transition"
+            >
+              <div className="flex gap-2 flex-wrap">
+                <Badge tone="blue">{p.category}</Badge>
+                {p.tag && <Badge>{p.tag}</Badge>}
               </div>
 
-              <div className="rounded-2xl border border-white/10 bg-slate-950/25 p-4">
-                <p className="text-slate-100 font-medium">Standards alignment</p>
-                <p className="mt-1">
-                  IOC-UNESCO Indicator Methodology for SDG 14.3.1.
-                </p>
-              </div>
+              <p className="mt-2 text-xs text-slate-300">
+                {p.dateLabel}
+              </p>
 
-              <div className="rounded-2xl border border-white/10 bg-slate-950/25 p-4">
-                <p className="text-slate-100 font-medium">NOCIH involvement</p>
-                <p className="mt-1">
-                  Scientific personnel will be fully involved in implementation
-                  and monitoring activities.
-                </p>
-              </div>
-            </div>
+              <h4 className="mt-3 text-lg font-semibold">
+                {p.title}
+              </h4>
 
-            <div className="mt-6 rounded-2xl border border-white/10 bg-slate-950/25 p-4">
-              <p className="text-sm text-slate-200">
-                Want to add more posts? Just append items to the{" "}
-                <span className="text-slate-100 font-medium">posts</span> array
-                at the top of this file.
+              <p className="mt-3 text-sm text-slate-200">
+                {p.excerpt}
               </p>
             </div>
-          </aside>
+          ))}
         </div>
       </section>
     </div>
