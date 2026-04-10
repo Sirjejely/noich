@@ -108,7 +108,7 @@ function FluidImageGallery() {
   );
 }
 
-/* 🔬 PROJECT STATUS */
+/* 🔬 PROJECT STATUS (CLIENT CORRECTED) */
 function ProjectStatus() {
   return (
     <div className="mt-16">
@@ -116,15 +116,14 @@ function ProjectStatus() {
         Project Status & Data Pipeline
       </h3>
 
-      <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
         {[
-          ["Field Sampling", "Completed"],
-          ["Laboratory Analysis", "Completed"],
-          ["Data Processing", "Ongoing"],
-          ["Results & Reporting", "Pending"],
+          ["Field Sample Collection", "Ongoing"],
+          ["Laboratory Analysis", "Ongoing"],
+          ["Monitoring, Reporting & Verification (MRV)", "Pending"],
         ].map(([title, status], i) => (
           <div key={i} className="rounded-xl border p-5 bg-white/5">
-            <p className="text-xs">{status}</p>
+            <p className="text-xs text-slate-300">{status}</p>
             <h4 className="mt-2 font-semibold">{title}</h4>
           </div>
         ))}
@@ -132,32 +131,35 @@ function ProjectStatus() {
 
       <div className="mt-6 rounded-xl border border-white/10 bg-slate-950/40 p-5">
         <p className="text-sm text-slate-200">
-          Data are undergoing rigorous validation following international ocean
-          acidification monitoring standards. Final results will be published in
-          alignment with SDG 14.3.1 reporting frameworks.
+          The Ocean Acidification monitoring project is currently ongoing, with
+          active field sample collection and laboratory analysis. Monitoring,
+          Reporting & Verification (MRV) activities will follow upon completion
+          of data validation.
         </p>
       </div>
     </div>
   );
 }
 
-/* 🌍 SAMPLING MAP */
+/* 🌍 SAMPLING MAP (CLIENT CORRECTED LOCATION + TEXT) */
 function SamplingMap() {
   return (
     <div className="mt-16">
       <h3 className="text-2xl font-semibold mb-4">
-        Sampling Locations (Tropical South Atlantic)
+        Sampling Locations
       </h3>
 
       <p className="text-slate-300 max-w-3xl mb-6">
-        The Ocean Acidification monitoring campaign was conducted across coastal
-        waters in the Gulf of Guinea by the combined NOCIH and University of
-        Calabar (UNICAL) team.
+        The Ocean Acidification monitoring campaign is being conducted across
+        the coastal waters of the Ibeno–Okposo Atlantic Ocean segment of the
+        Gulf of Guinea by the combined teams of NOCIH and University of Calabar
+        (UNICAL) researchers. The project will continue until the end of
+        December 2026.
       </p>
 
       <div className="w-full h-[400px] rounded-2xl overflow-hidden border border-white/10">
         <iframe
-          src="https://maps.google.com/maps?q=University%20of%20Calabar&t=&z=6&ie=UTF8&iwloc=&output=embed"
+          src="https://maps.google.com/maps?q=Ibeno%20Akwa%20Ibom%20Nigeria&t=&z=7&ie=UTF8&iwloc=&output=embed"
           className="w-full h-full border-0"
           loading="lazy"
         />
@@ -224,7 +226,7 @@ export default function NewsPage() {
 
         <p className="mt-4 text-slate-200 max-w-3xl">
           Combined NOCIH and UNICAL team conducting Ocean Acidification monitoring
-          in February 2026 across Tropical South Atlantic coastal waters.
+          across the Gulf of Guinea coastal waters.
         </p>
 
         <FluidImageGallery />
