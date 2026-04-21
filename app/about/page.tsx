@@ -94,7 +94,7 @@ export default function AboutPage() {
 
           <div className="mt-5 space-y-5 text-slate-200 text-lg md:text-xl leading-relaxed">
             <p>
-              Nigeria Ocean-Climate Innovation Hub (NOCIH) is a non-profit environmental organization
+              Novel Ocean-Climate Innovation Hydro-Initiative (NOCIH) is a non-profit environmental organization
               based in Calabar, Nigeria, established in January 2026 to advance ocean-climate innovation
               and collaboration across the Gulf of Guinea and West Africa.
             </p>
@@ -107,10 +107,12 @@ export default function AboutPage() {
             </p>
 
             <p className="text-slate-300">
-              Our activities align with the{' '}
-              <span className="text-blue-300 font-semibold">United Nations Ocean Decade (2021–2030)</span>{' '}
-              and the GEOS Programme objectives for the marine environment, contributing to evidence-driven
-              action for healthier oceans and climate stability.
+              We also engage in building capacity among stakeholders through{' '}
+              <span className="text-blue-300 font-semibold">workshops</span>,{' '}
+              <span className="text-blue-300 font-semibold">awareness creation</span>,{' '}
+              <span className="text-blue-300 font-semibold">innovative technologies</span>,{' '}
+              <span className="text-blue-300 font-semibold">strategic partnerships</span>, and{' '}
+              <span className="text-blue-300 font-semibold">community-based engagement</span>.
             </p>
 
             <p className="text-slate-300">
