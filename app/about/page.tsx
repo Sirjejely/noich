@@ -66,7 +66,7 @@ export default function AboutPage() {
               About NOCIH
             </h1>
             <p className="mt-6 text-xl md:text-2xl text-blue-100 leading-relaxed">
-              Novel Ocean-Climate Innovation Hydeo-Initiative (NOCIH) advances ocean-based climate innovations
+              Novel Ocean-Climate Innovation Hydro-Initiative (NOCIH) advances ocean-based climate innovations
               across the Gulf of Guinea and West Africa—connecting science, communities, and partners
               to deliver practical solutions.
             </p>

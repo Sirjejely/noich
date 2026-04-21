@@ -14,7 +14,7 @@ export default function Footer() {
               <img src="/images/logo.jpg" alt="NOCIH Logo" className="h-12 w-auto" />
               <div>
                 <h3 className="text-2xl font-bold text-white">NOCIH</h3>
-                <p className="text-blue-400 text-sm">Ocean-Climate Hub</p>
+                <p className="text-blue-400 text-sm">Ocean-Climate Hydro-Initiative</p>
               </div>
             </div>
 
@@ -83,7 +83,7 @@ export default function Footer() {
 
         {/* BOTTOM */}
         <div className="mt-14 pt-8 border-t border-white/10 text-center text-slate-400 text-sm md:text-base">
-          © {year} Nigeria Ocean-Climate Innovation Hub (NOCIH). All rights reserved.
+          © {year} Novel Ocean-Climate Innovation Hydro-Initiative (NOCIH). All rights reserved.
         </div>
       </div>
     </footer>
