@@ -3,26 +3,32 @@ export default function AboutPage() {
     {
       title: 'Scientific Integrity',
       desc: 'We follow evidence, transparency, and responsible science in all our work.',
+      icon: '🔬',
     },
     {
       title: 'Climate Action',
       desc: 'We focus on measurable solutions that reduce risk and protect lives and ecosystems.',
+      icon: '🌱',
     },
     {
       title: 'Innovation',
       desc: 'We build and test practical ideas that can scale across coastal communities.',
+      icon: '⚙️',
     },
     {
       title: 'Capacity Building',
       desc: 'We train and empower people, institutions, and communities to act effectively.',
+      icon: '🎓',
     },
     {
       title: 'Resilience',
       desc: 'We strengthen systems to withstand shocks and recover faster.',
+      icon: '🛡️',
     },
     {
       title: 'Adaptation',
       desc: 'We support climate-smart strategies that fit local realities and long-term needs.',
+      icon: '🌊',
     },
   ];
 
@@ -50,131 +56,217 @@ export default function AboutPage() {
   ];
 
   return (
-    <div className="text-white">
+    <div className="overflow-hidden text-white">
       {/* HERO */}
-      <section className="relative overflow-hidden">
+      <section className="relative min-h-[78vh] overflow-hidden flex items-center justify-center text-center">
         <div
-          className="absolute inset-0 bg-cover bg-center"
+          className="absolute inset-0 bg-cover bg-center scale-105"
           style={{ backgroundImage: "url('/images/hero-ocean1.jpg')" }}
         />
-        <div className="absolute inset-0 bg-slate-950/70" />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-slate-950/40 to-slate-950" />
 
-        <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 py-20 md:py-28">
-          <div className="max-w-3xl">
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold leading-tight">
-              About NOCIH
-            </h1>
-            <p className="mt-6 text-xl md:text-2xl text-blue-100 leading-relaxed">
-              Novel Ocean-Climate Innovation Hydro-Initiative (NOCIH) advances ocean-based climate innovations
-              across the Gulf of Guinea and West Africa—connecting science, communities, and partners
-              to deliver practical solutions.
-            </p>
+        <div className="absolute inset-0 bg-slate-950/75" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-slate-950/50 to-slate-950" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(34,211,238,0.18),transparent_55%)]" />
 
-            <div className="mt-8 flex flex-wrap gap-2">
-              <span className="px-4 py-2 rounded-full text-sm md:text-base border border-white/10 bg-slate-950/40">
-                Established: January 2026
+        {/* Floating ocean glows */}
+        <div className="pointer-events-none absolute -top-32 left-10 h-96 w-96 rounded-full bg-cyan-500/20 blur-3xl" />
+        <div className="pointer-events-none absolute bottom-10 right-0 h-96 w-96 rounded-full bg-blue-700/20 blur-3xl" />
+        <div className="pointer-events-none absolute bottom-0 left-1/3 h-80 w-80 rounded-full bg-teal-400/10 blur-3xl" />
+
+        <div className="relative z-10 max-w-5xl mx-auto px-6 lg:px-8 py-24 md:py-32">
+          <div className="inline-flex items-center gap-2 rounded-full border border-cyan-300/20 bg-white/10 px-5 py-2 text-sm md:text-base text-cyan-100 backdrop-blur-md shadow-lg shadow-cyan-950/30">
+            <span className="h-2 w-2 rounded-full bg-cyan-300 animate-pulse" />
+            Ocean-Climate Innovation for Africa
+          </div>
+
+          <h1 className="mt-7 text-5xl md:text-7xl lg:text-8xl font-black leading-tight tracking-tight">
+            About{' '}
+            <span className="inline-flex items-end gap-1">
+              <span>NOCIH</span>
+              <span>-</span>
+              <span className="inline-block font-serif italic font-black text-transparent bg-clip-text bg-[linear-gradient(90deg,#67e8f9,#ffffff,#38bdf8,#14b8a6,#67e8f9)] bg-[length:300%_100%] drop-shadow-[0_0_25px_rgba(103,232,249,0.45)] animate-[africaWave_3.5s_ease-in-out_infinite,africaShimmer_5s_linear_infinite]">
+                Africa
               </span>
-              <span className="px-4 py-2 rounded-full text-sm md:text-base border border-white/10 bg-slate-950/40">
-                Based in Calabar, Nigeria
-              </span>
-              <span className="px-4 py-2 rounded-full text-sm md:text-base border border-white/10 bg-slate-950/40">
-                Gulf of Guinea • West Africa
-              </span>
-            </div>
+            </span>
+          </h1>
+
+          <p className="mt-7 text-xl md:text-2xl text-cyan-50/90 leading-relaxed max-w-4xl mx-auto">
+            Novel Ocean-Climate Innovation Hydro-Initiative advances ocean-based
+            climate innovation across Nigeria, the Gulf of Guinea, West Africa,
+            and the wider African continent by connecting science, communities,
+            technology, and strategic partners.
+          </p>
+
+          <div className="mt-9 flex flex-wrap justify-center gap-3">
+            <span className="px-5 py-3 rounded-full text-sm md:text-base border border-white/10 bg-slate-950/50 backdrop-blur-md text-slate-100">
+              Established: January 2026
+            </span>
+
+            <span className="px-5 py-3 rounded-full text-sm md:text-base border border-white/10 bg-slate-950/50 backdrop-blur-md text-slate-100">
+              Based in Calabar, Nigeria
+            </span>
+
+            <span className="px-5 py-3 rounded-full text-sm md:text-base border border-white/10 bg-slate-950/50 backdrop-blur-md text-slate-100">
+              Gulf of Guinea • West Africa • Africa
+            </span>
           </div>
         </div>
       </section>
 
       {/* CONTENT */}
-      <section className="max-w-7xl mx-auto px-6 lg:px-8 py-14 md:py-20">
+      <section className="relative max-w-7xl mx-auto px-6 lg:px-8 py-16 md:py-24">
+        <div className="pointer-events-none absolute top-20 left-1/2 h-96 w-96 -translate-x-1/2 rounded-full bg-cyan-500/10 blur-3xl" />
+
         {/* Who we are */}
-        <div className="rounded-3xl border border-white/10 bg-white/5 p-7 md:p-12">
-          <h2 className="text-3xl md:text-4xl font-bold">Who We Are</h2>
+        <div className="relative rounded-[2rem] border border-cyan-300/15 bg-white/[0.06] p-7 md:p-12 text-center shadow-2xl shadow-cyan-950/30 backdrop-blur-xl">
+          <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-cyan-300/60 to-transparent" />
 
-          <div className="mt-5 space-y-5 text-slate-200 text-lg md:text-xl leading-relaxed">
-            <p>
-              Novel Ocean-Climate Innovation Hydro-Initiative (NOCIH) is a non-profit environmental organization
-              based in Calabar, Nigeria, established in January 2026 to advance ocean-climate innovation
-              and collaboration across the Gulf of Guinea and West Africa.
-            </p>
+          <div className="mx-auto max-w-5xl">
+            <span className="inline-flex rounded-full border border-cyan-300/20 bg-cyan-400/10 px-4 py-2 text-sm font-medium text-cyan-200">
+              Who We Are
+            </span>
 
-            <p className="text-slate-300">
-              NOCIH serves as a platform connecting science, technology, and communities to promote
-              sustainable ocean practices and practical solutions to climate-related marine challenges.
-              Our work strengthens resilience in coastal regions through research translation,
-              partnerships, and locally relevant environmental technologies.
-            </p>
+            <h2 className="mt-5 text-3xl md:text-5xl font-black leading-tight">
+              We are building an African platform for ocean-climate innovation.
+            </h2>
 
-            <p className="text-slate-300">
-              We also engage in building capacity among stakeholders through{' '}
-              <span className="text-blue-300 font-semibold">workshops</span>,{' '}
-              <span className="text-blue-300 font-semibold">awareness creation</span>,{' '}
-              <span className="text-blue-300 font-semibold">innovative technologies</span>,{' '}
-              <span className="text-blue-300 font-semibold">strategic partnerships</span>, and{' '}
-              <span className="text-blue-300 font-semibold">community-based engagement</span>.
-            </p>
+            <div className="mt-7 space-y-6 text-slate-200 text-lg md:text-xl leading-relaxed">
+              <p>
+                Novel Ocean-Climate Innovation Hydro-Initiative{' '}
+                <span className="font-semibold text-cyan-200">(NOCIH-Africa)</span>{' '}
+                is a non-profit environmental organization based in Calabar,
+                Nigeria, established in January 2026 to advance ocean-climate
+                innovation, research translation, and collaboration across the
+                Gulf of Guinea, West Africa, and the wider African continent.
+              </p>
 
-            <p className="text-slate-300">
-              We collaborate with universities, research institutions, government agencies, coastal communities,
-              entrepreneurs, policymakers, and environmental organizations to accelerate technological and
-              nature-based solutions to ocean-climate challenges in Nigeria and West Africa.
-            </p>
+              <p className="text-slate-300">
+                NOCIH-Africa serves as a platform connecting science,
+                technology, policy, and communities to promote sustainable ocean
+                practices and practical responses to climate-related marine
+                challenges. Our work supports coastal resilience through
+                research, partnerships, environmental innovation, and locally
+                relevant solutions.
+              </p>
+
+              <p className="text-slate-300">
+                We also engage in building capacity among stakeholders through{' '}
+                <span className="text-cyan-300 font-semibold">workshops</span>,{' '}
+                <span className="text-cyan-300 font-semibold">
+                  awareness creation
+                </span>
+                ,{' '}
+                <span className="text-cyan-300 font-semibold">
+                  innovative technologies
+                </span>
+                ,{' '}
+                <span className="text-cyan-300 font-semibold">
+                  strategic partnerships
+                </span>
+                , and{' '}
+                <span className="text-cyan-300 font-semibold">
+                  community-based engagement
+                </span>
+                .
+              </p>
+
+              <p className="text-slate-300">
+                NOCIH-Africa collaborates with universities, research
+                institutions, government agencies, coastal communities,
+                entrepreneurs, policymakers, and environmental organizations to
+                accelerate technological and nature-based responses to
+                ocean-climate challenges.
+              </p>
+            </div>
           </div>
         </div>
 
         {/* Focus Areas */}
-        <div className="mt-10">
-          <h2 className="text-3xl md:text-4xl font-bold text-center">Our Focus Areas</h2>
-          <p className="mt-4 text-center text-slate-300 text-lg md:text-xl max-w-4xl mx-auto leading-relaxed">
-            We focus on building practical solutions and partnerships that translate evidence into action.
+        <div className="mt-16 text-center">
+          <span className="inline-flex rounded-full border border-cyan-300/20 bg-white/5 px-4 py-2 text-sm font-medium text-cyan-200">
+            What We Focus On
+          </span>
+
+          <h2 className="mt-5 text-3xl md:text-5xl font-black">
+            Our Focus Areas
+          </h2>
+
+          <p className="mt-5 text-slate-300 text-lg md:text-xl max-w-4xl mx-auto leading-relaxed">
+            NOCIH-Africa focuses on building practical solutions and
+            partnerships that translate evidence into real ocean-climate action.
           </p>
 
-          <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {focusAreas.map((f) => (
               <div
                 key={f.title}
-                className="rounded-3xl border border-white/10 bg-white/5 p-6 md:p-7 hover:bg-white/10 transition"
+                className="group relative overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.06] p-7 text-center backdrop-blur-md transition duration-500 hover:-translate-y-2 hover:border-cyan-300/40 hover:bg-cyan-400/10 hover:shadow-2xl hover:shadow-cyan-950/30"
               >
-                <div className="text-4xl">{f.icon}</div>
-                <h3 className="mt-4 text-xl font-semibold">{f.title}</h3>
-                <p className="mt-2 text-slate-300 text-base md:text-lg leading-relaxed">{f.desc}</p>
+                <div className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/10 to-transparent transition-transform duration-700 group-hover:translate-x-full" />
+
+                <div className="relative mx-auto flex h-16 w-16 items-center justify-center rounded-2xl border border-cyan-300/20 bg-cyan-400/10 text-4xl shadow-lg shadow-cyan-950/20">
+                  {f.icon}
+                </div>
+
+                <h3 className="relative mt-5 text-xl font-bold text-white">
+                  {f.title}
+                </h3>
+
+                <p className="relative mt-3 text-slate-300 text-base md:text-lg leading-relaxed">
+                  {f.desc}
+                </p>
               </div>
             ))}
           </div>
         </div>
 
-        {/* Mission / Vision / Values (flexible & beautiful) */}
-        <div className="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-          {/* Mission */}
-          <div className="rounded-3xl border border-white/10 bg-gradient-to-b from-white/10 to-white/5 p-7 md:p-9 hover:bg-white/10 transition">
-            <div className="text-4xl">🎯</div>
-            <h3 className="mt-4 text-2xl font-semibold">Our Mission</h3>
-            <p className="mt-3 text-slate-200 text-lg md:text-xl leading-relaxed">
-              To develop and scale ocean-climate solutions through innovation, collaboration,
-              and capacity building.
+        {/* Mission / Vision / Values */}
+        <div className="mt-16 grid gap-6 md:grid-cols-2 xl:grid-cols-3 text-center">
+          <div className="group rounded-[2rem] border border-cyan-300/15 bg-gradient-to-b from-cyan-400/10 to-white/[0.04] p-8 md:p-10 backdrop-blur-md transition duration-500 hover:-translate-y-2 hover:border-cyan-300/40 hover:shadow-2xl hover:shadow-cyan-950/30">
+            <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-2xl bg-cyan-400/10 text-4xl">
+              🎯
+            </div>
+
+            <h3 className="mt-5 text-2xl md:text-3xl font-bold">
+              Our Mission
+            </h3>
+
+            <p className="mt-4 text-slate-200 text-lg md:text-xl leading-relaxed">
+              To develop and scale ocean-climate solutions through innovation,
+              collaboration, research translation, and capacity building.
             </p>
           </div>
 
-          {/* Vision */}
-          <div className="rounded-3xl border border-white/10 bg-gradient-to-b from-white/10 to-white/5 p-7 md:p-9 hover:bg-white/10 transition">
-            <div className="text-4xl">🌍</div>
-            <h3 className="mt-4 text-2xl font-semibold">Our Vision</h3>
-            <p className="mt-3 text-slate-200 text-lg md:text-xl leading-relaxed">
-              A resilient West Africa where ocean ecosystems and coastal communities thrive
-              in a changing climate.
+          <div className="group rounded-[2rem] border border-cyan-300/15 bg-gradient-to-b from-blue-400/10 to-white/[0.04] p-8 md:p-10 backdrop-blur-md transition duration-500 hover:-translate-y-2 hover:border-cyan-300/40 hover:shadow-2xl hover:shadow-cyan-950/30">
+            <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-2xl bg-blue-400/10 text-4xl">
+              🌍
+            </div>
+
+            <h3 className="mt-5 text-2xl md:text-3xl font-bold">
+              Our Vision
+            </h3>
+
+            <p className="mt-4 text-slate-200 text-lg md:text-xl leading-relaxed">
+              A resilient Africa where ocean ecosystems and coastal communities
+              thrive in a changing climate.
             </p>
           </div>
 
-          {/* Core Values summary */}
-          <div className="rounded-3xl border border-white/10 bg-gradient-to-b from-white/10 to-white/5 p-7 md:p-9 hover:bg-white/10 transition md:col-span-2 xl:col-span-1">
-            <div className="text-4xl">🧭</div>
-            <h3 className="mt-4 text-2xl font-semibold">Our Core Values</h3>
-            <p className="mt-3 text-slate-200 text-lg md:text-xl leading-relaxed">
-              The principles that guide our decisions, partnerships, and delivery.
+          <div className="group rounded-[2rem] border border-cyan-300/15 bg-gradient-to-b from-teal-400/10 to-white/[0.04] p-8 md:p-10 backdrop-blur-md transition duration-500 hover:-translate-y-2 hover:border-cyan-300/40 hover:shadow-2xl hover:shadow-cyan-950/30 md:col-span-2 xl:col-span-1">
+            <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-2xl bg-teal-400/10 text-4xl">
+              🧭
+            </div>
+
+            <h3 className="mt-5 text-2xl md:text-3xl font-bold">
+              Our Core Values
+            </h3>
+
+            <p className="mt-4 text-slate-200 text-lg md:text-xl leading-relaxed">
+              The principles that guide NOCIH-Africa’s decisions, partnerships,
+              programmes, and delivery.
             </p>
 
-            <div className="mt-5 flex flex-wrap gap-2">
+            <div className="mt-6 flex flex-wrap justify-center gap-2">
               {[
                 'Scientific Integrity',
                 'Climate Action',
@@ -194,34 +286,82 @@ export default function AboutPage() {
           </div>
         </div>
 
-        {/* Values grid (detailed) */}
-        <div className="mt-14">
-          <h2 className="text-3xl md:text-4xl font-bold text-center">Our Core Values</h2>
-          <p className="mt-4 text-center text-slate-300 text-lg md:text-xl max-w-4xl mx-auto leading-relaxed">
-            These values shape how we work, what we prioritize, and the standard we uphold.
+        {/* Detailed Values */}
+        <div className="mt-18 md:mt-20 text-center">
+          <span className="inline-flex rounded-full border border-cyan-300/20 bg-white/5 px-4 py-2 text-sm font-medium text-cyan-200">
+            What Guides Us
+          </span>
+
+          <h2 className="mt-5 text-3xl md:text-5xl font-black">
+            Our Core Values
+          </h2>
+
+          <p className="mt-5 text-slate-300 text-lg md:text-xl max-w-4xl mx-auto leading-relaxed">
+            These values shape how NOCIH-Africa works, what we prioritize, and
+            the standards we uphold in every partnership and programme.
           </p>
 
-          <div className="mt-9 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {values.map((v) => (
               <div
                 key={v.title}
-                className="rounded-3xl border border-white/10 bg-white/5 p-7 hover:bg-white/10 transition"
+                className="group relative overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.06] p-7 text-center backdrop-blur-md transition duration-500 hover:-translate-y-2 hover:border-cyan-300/40 hover:bg-cyan-400/10 hover:shadow-2xl hover:shadow-cyan-950/30"
               >
-                <h3 className="text-xl font-semibold">{v.title}</h3>
+                <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-cyan-300/50 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+
+                <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl border border-cyan-300/20 bg-slate-950/50 text-3xl">
+                  {v.icon}
+                </div>
+
+                <h3 className="mt-5 text-xl md:text-2xl font-bold text-white">
+                  {v.title}
+                </h3>
+
                 <p className="mt-3 text-slate-300 text-base md:text-lg leading-relaxed">
                   {v.desc}
                 </p>
               </div>
             ))}
           </div>
+        </div>
 
-          {/* Alignment statement (optional but strong) */}
-          <div className="mt-10 rounded-3xl border border-white/10 bg-slate-950/40 p-7 md:p-10">
-            <h3 className="text-2xl font-semibold">Alignment</h3>
-            <p className="mt-3 text-slate-300 text-lg md:text-xl leading-relaxed">
-              Our work aligns with the <span className="text-blue-300 font-semibold">UN Ocean Decade (2021–2030)</span>{' '}
-              and supports evidence-led action for healthier oceans, stronger coastal resilience, and climate stability.
-            </p>
+        {/* Final CTA */}
+        <div className="mt-16 rounded-[2rem] border border-cyan-300/15 bg-gradient-to-r from-cyan-500/10 via-blue-500/10 to-teal-500/10 p-8 md:p-12 text-center shadow-2xl shadow-cyan-950/30">
+          <h2 className="text-3xl md:text-5xl font-black leading-tight">
+            Partner with{' '}
+            <span className="inline-flex items-end gap-1">
+              <span>NOCIH</span>
+              <span>-</span>
+              <span className="inline-block font-serif italic font-black text-transparent bg-clip-text bg-[linear-gradient(90deg,#67e8f9,#ffffff,#38bdf8,#14b8a6,#67e8f9)] bg-[length:300%_100%] drop-shadow-[0_0_20px_rgba(103,232,249,0.35)] animate-[africaWave_3.5s_ease-in-out_infinite,africaShimmer_5s_linear_infinite]">
+                Africa
+              </span>
+            </span>
+          </h2>
+
+          <p className="mt-5 max-w-4xl mx-auto text-slate-300 text-lg md:text-xl leading-relaxed">
+            We welcome collaboration with researchers, universities,
+            institutions, coastal communities, funders, innovators, and
+            policy-focused partners committed to practical ocean-climate action
+            across Africa.
+          </p>
+
+          <div className="mt-8 flex flex-wrap justify-center gap-4">
+            <a
+              href="/contact"
+              className="group inline-flex items-center gap-2 rounded-full border border-cyan-300/30 bg-cyan-400/10 px-7 py-4 text-cyan-100 font-semibold transition duration-300 hover:-translate-y-1 hover:bg-cyan-400/20 hover:border-cyan-200/60"
+            >
+              Get Involved
+              <span className="transition-transform duration-300 group-hover:translate-x-1">
+                →
+              </span>
+            </a>
+
+            <a
+              href="/work"
+              className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-7 py-4 text-slate-100 font-semibold transition duration-300 hover:-translate-y-1 hover:bg-white/10 hover:border-cyan-300/40"
+            >
+              Explore Our Work
+            </a>
           </div>
         </div>
       </section>
