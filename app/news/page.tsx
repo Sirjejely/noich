@@ -33,9 +33,42 @@ function Brand({ small = false }: { small?: boolean }) {
   );
 }
 
+function Badge({ children }: { children: ReactNode }) {
+  return (
+    <span className="rounded-full border border-cyan-300/20 bg-white/10 px-3 py-1 text-xs text-cyan-100 backdrop-blur-md">
+      {children}
+    </span>
+  );
+}
+
 const posts: NewsPost[] = [
   {
     featured: true,
+    category: 'World Oceans Day',
+    tag: 'Marine Carbon Dioxide Removal',
+    dateLabel: 'Monday, 8 June 2026 • University of Calabar, Nigeria',
+    title:
+      'World Oceans Day 2026 Celebration: Harnessing African Innovative Technologies for Marine Carbon Dioxide Removal',
+    excerpt: (
+      <>
+        <Brand small /> in collaboration with MACORN-UNICAL, the Institute of
+        Oceanography, UNICAL, and the Faculty of Oceanography, UNICAL, will
+        jointly celebrate World Oceans Day 2026 with the theme:{' '}
+        <span className="font-semibold text-cyan-100">
+          “REIMAGINE: BEYOND THE WORLD WE KNOW — A NEW RELATIONSHIP WITH OUR
+          OCEAN.”
+        </span>{' '}
+        The celebration will feature a public awareness campaign on
+        ocean-climate crises within and outside the University of Calabar,
+        Nigeria, and a public lecture by Engr. Henry Okoroego, Science &amp;
+        Technology Advisor of NOCIH. The lecture will be followed by panel
+        discussions on pathways for mitigating climate change through African
+        innovative technologies.
+      </>
+    ),
+    image: '/images/banner.jpeg',
+  },
+  {
     category: 'Partnership',
     tag: 'Ocean Acidification',
     dateLabel: 'February 2026 • University of Calabar, Nigeria',
@@ -55,12 +88,40 @@ const posts: NewsPost[] = [
 ];
 
 const featured = posts[0];
+const otherPosts = posts.slice(1);
 
-function Badge({ children }: { children: ReactNode }) {
+function NewsCard({ post }: { post: NewsPost }) {
   return (
-    <span className="rounded-full border border-cyan-300/20 bg-white/10 px-3 py-1 text-xs text-cyan-100 backdrop-blur-md">
-      {children}
-    </span>
+    <article className="group overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.06] shadow-xl shadow-cyan-950/20 backdrop-blur-md transition duration-500 hover:-translate-y-2 hover:border-cyan-300/40 hover:bg-cyan-400/10 hover:shadow-2xl hover:shadow-cyan-950/40">
+      {post.image && (
+        <div className="relative h-72 w-full bg-slate-900">
+          <Image
+            src={post.image}
+            alt={post.title}
+            fill
+            className="object-cover transition duration-700 group-hover:scale-105"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent" />
+        </div>
+      )}
+
+      <div className="p-7 md:p-8">
+        <div className="flex flex-wrap gap-2">
+          <Badge>{post.category}</Badge>
+          {post.tag && <Badge>{post.tag}</Badge>}
+        </div>
+
+        <p className="mt-4 text-sm text-cyan-300">{post.dateLabel}</p>
+
+        <h3 className="mt-4 text-2xl font-black leading-tight text-white">
+          {post.title}
+        </h3>
+
+        <p className="mt-4 text-base leading-relaxed text-slate-300">
+          {post.excerpt}
+        </p>
+      </div>
+    </article>
   );
 }
 
@@ -91,7 +152,9 @@ function FluidImageGallery() {
             <div className="relative h-56 w-full">
               <Image
                 src={src}
-                alt={`Ocean Acidification monitoring field and laboratory activity ${i + 1}`}
+                alt={`Ocean Acidification monitoring field and laboratory activity ${
+                  i + 1
+                }`}
                 fill
                 className="object-cover transition duration-700 group-hover:scale-110"
               />
@@ -155,7 +218,7 @@ function ProjectStatus() {
         Project Status
       </span>
 
-      <h3 className="mt-5 text-3xl md:text-5xl font-black">
+      <h3 className="mt-5 text-3xl font-black md:text-5xl">
         Project Status & Data Pipeline
       </h3>
 
@@ -194,7 +257,7 @@ function SamplingMap() {
         Sampling Locations
       </span>
 
-      <h3 className="mt-5 text-3xl md:text-5xl font-black">
+      <h3 className="mt-5 text-3xl font-black md:text-5xl">
         Gulf of Guinea field monitoring area
       </h3>
 
@@ -250,14 +313,15 @@ export default function NewsPage() {
           </h1>
 
           <p className="mx-auto mt-7 max-w-5xl text-xl leading-relaxed text-cyan-50/90 md:text-2xl">
-            Scientific progress, field activities, partnerships, and project
-            milestones from <Brand /> as we build ocean-climate innovation
-            across Nigeria, West Africa, and the wider African continent.
+            Scientific progress, field activities, partnerships, public
+            awareness campaigns, and project milestones from <Brand /> as we
+            build ocean-climate innovation across Nigeria, West Africa, and the
+            wider African continent.
           </p>
         </div>
       </section>
 
-      {/* FEATURED */}
+      {/* FEATURED WORLD OCEANS DAY NEWS */}
       <section className="relative z-20 mx-auto -mt-14 max-w-7xl px-6 lg:px-8">
         <div className="overflow-hidden rounded-[2rem] border border-cyan-300/15 bg-slate-950/80 shadow-2xl shadow-cyan-950/40 backdrop-blur-xl">
           <div className="grid lg:grid-cols-5">
@@ -266,12 +330,13 @@ export default function NewsPage() {
                 src={featured.image!}
                 alt={featured.title}
                 fill
+                priority
                 className="object-contain"
               />
 
-              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-5 text-sm text-slate-200">
-                Prof. Francis Emile Asuquo and Prof. Francis Nwosu receiving
-                BIOTTA equipment at the University of Calabar.
+              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/85 to-transparent p-5 text-sm text-slate-200">
+                World Oceans Day 2026 celebration lecture banner — University
+                of Calabar, Nigeria.
               </div>
             </div>
 
@@ -297,11 +362,147 @@ export default function NewsPage() {
         </div>
       </section>
 
-      {/* FIELD + LAB */}
+      {/* WORLD OCEANS DAY FULL NEWS DETAILS */}
       <section className="relative mx-auto max-w-7xl px-6 py-16 lg:px-8 md:py-24">
+        <div className="rounded-[2rem] border border-cyan-300/15 bg-white/[0.06] p-8 shadow-2xl shadow-cyan-950/30 backdrop-blur-md md:p-12">
+          <div className="text-center">
+            <span className="inline-flex rounded-full border border-cyan-300/20 bg-cyan-400/10 px-4 py-2 text-sm font-medium text-cyan-200">
+              Special Announcement
+            </span>
+
+            <h2 className="mx-auto mt-5 max-w-5xl text-3xl font-black leading-tight md:text-5xl">
+              World Oceans Day 2026 Celebration at the University of Calabar
+            </h2>
+
+            <p className="mx-auto mt-5 max-w-5xl text-lg leading-relaxed text-slate-300 md:text-xl">
+              NOCIH-AFRICA, in collaboration with MACORN-UNICAL — Marine
+              Atmosphere &amp; Coastal Ocean Resources Network, the Institute of
+              Oceanography, UNICAL, and the Faculty of Oceanography, UNICAL, all
+              in the University of Calabar, Nigeria, are jointly celebrating
+              World Oceans Day 2026.
+            </p>
+          </div>
+
+          <div className="mt-10 grid gap-6 md:grid-cols-3">
+            <div className="rounded-3xl border border-white/10 bg-slate-950/50 p-6 text-center">
+              <p className="text-4xl">🌊</p>
+              <h3 className="mt-4 text-xl font-bold text-white">Theme</h3>
+              <p className="mt-3 text-sm leading-relaxed text-slate-300">
+                “REIMAGINE: BEYOND THE WORLD WE KNOW — A NEW RELATIONSHIP WITH
+                OUR OCEAN”
+              </p>
+            </div>
+
+            <div className="rounded-3xl border border-white/10 bg-slate-950/50 p-6 text-center">
+              <p className="text-4xl">📅</p>
+              <h3 className="mt-4 text-xl font-bold text-white">Date</h3>
+              <p className="mt-3 text-sm leading-relaxed text-slate-300">
+                Monday, 8th June, 2026
+              </p>
+            </div>
+
+            <div className="rounded-3xl border border-white/10 bg-slate-950/50 p-6 text-center">
+              <p className="text-4xl">📍</p>
+              <h3 className="mt-4 text-xl font-bold text-white">Venue</h3>
+              <p className="mt-3 text-sm leading-relaxed text-slate-300">
+                University of Calabar, Calabar, Cross River State, Nigeria
+              </p>
+            </div>
+          </div>
+
+          <div className="mt-10 grid gap-6 lg:grid-cols-2">
+            <div className="rounded-[2rem] border border-cyan-300/15 bg-cyan-400/10 p-7">
+              <h3 className="text-2xl font-black text-white">
+                Activities of the Day
+              </h3>
+
+              <ul className="mt-5 space-y-4 text-left text-slate-300">
+                <li className="flex gap-3">
+                  <span className="text-cyan-300">✓</span>
+                  <span>
+                    Public awareness campaign on ocean-climate crises within
+                    and outside the University of Calabar, Nigeria.
+                  </span>
+                </li>
+
+                <li className="flex gap-3">
+                  <span className="text-cyan-300">✓</span>
+                  <span>
+                    Public lecture on African innovative technologies for
+                    marine carbon dioxide removal.
+                  </span>
+                </li>
+
+                <li className="flex gap-3">
+                  <span className="text-cyan-300">✓</span>
+                  <span>
+                    Panel discussions on pathways for mitigating climate change
+                    through African innovative technologies.
+                  </span>
+                </li>
+
+                <li className="flex gap-3">
+                  <span className="text-cyan-300">✓</span>
+                  <span>
+                    Promotion of industry-university collaboration and wider
+                    partnerships for marine conservation.
+                  </span>
+                </li>
+              </ul>
+            </div>
+
+            <div className="rounded-[2rem] border border-blue-300/15 bg-blue-400/10 p-7">
+              <h3 className="text-2xl font-black text-white">
+                Public Lecture
+              </h3>
+
+              <p className="mt-5 text-lg font-semibold leading-relaxed text-cyan-100">
+                “HARNESSING AFRICAN INNOVATIVE TECHNOLOGIES FOR MARINE CARBON
+                DIOXIDE REMOVAL — ENHANCING OCEAN RESILIENCE TO CLIMATE
+                CHANGE”
+              </p>
+
+              <p className="mt-5 leading-relaxed text-slate-300">
+                The lecture will be delivered by{' '}
+                <span className="font-semibold text-white">
+                  Engr. Henry Okoroego
+                </span>
+                , Science &amp; Technology Advisor of NOCIH. This lecture is
+                described as the first of its kind in sub-Saharan Africa and is
+                expected to pave the way for industry-university collaboration
+                and collaboration with others interested in the conservation and
+                protection of the teeming marine resources of the coastal and
+                marine ecosystems of West Africa.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* OTHER NEWS */}
+        {otherPosts.length > 0 && (
+          <div className="mt-20">
+            <div className="text-center">
+              <span className="inline-flex rounded-full border border-cyan-300/20 bg-white/5 px-4 py-2 text-sm font-medium text-cyan-200">
+                More News
+              </span>
+
+              <h2 className="mt-5 text-3xl font-black md:text-5xl">
+                Recent Updates
+              </h2>
+            </div>
+
+            <div className="mt-10 grid gap-8 lg:grid-cols-2">
+              {otherPosts.map((post) => (
+                <NewsCard key={post.title} post={post} />
+              ))}
+            </div>
+          </div>
+        )}
+
+        {/* FIELD + LAB */}
         <div className="pointer-events-none absolute top-20 left-1/2 h-96 w-96 -translate-x-1/2 rounded-full bg-cyan-500/10 blur-3xl" />
 
-        <div className="relative text-center">
+        <div className="relative mt-24 text-center">
           <span className="inline-flex rounded-full border border-cyan-300/20 bg-white/5 px-4 py-2 text-sm font-medium text-cyan-200">
             Field & Laboratory Activities
           </span>
