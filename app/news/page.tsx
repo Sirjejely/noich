@@ -257,18 +257,21 @@ export default function NewsPage() {
         </div>
       </section>
 
-      {/* NEW TOP NEWS */}
+      
       <section className="relative z-20 mx-auto -mt-14 max-w-7xl px-6 lg:px-8">
         <article className="overflow-hidden rounded-[2rem] border border-cyan-300/15 bg-slate-950/85 shadow-2xl shadow-cyan-950/40 backdrop-blur-xl">
-          <div className="relative h-[260px] w-full bg-slate-900 sm:h-[360px] lg:h-[460px]">
-            <Image
-              src="/images/banner.jpeg"
-              alt="World Oceans Day 2026 public lecture banner"
-              fill
-              priority
-              className="object-cover"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent" />
+          
+          <div className="relative w-full overflow-hidden bg-white">
+            <div className="relative mx-auto w-full aspect-[879/624]">
+              <Image
+                src="/images/banner.jpeg"
+                alt="World Oceans Day 2026 public lecture banner"
+                fill
+                priority
+                sizes="100vw"
+                className="object-contain"
+              />
+            </div>
           </div>
 
           <div className="p-8 text-center md:p-12 lg:p-14">
