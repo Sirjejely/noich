@@ -1,7 +1,7 @@
 export const teamMembers = [
   { name: 'Divine Francis Asuquo', role: 'CEO/MD', image: '/team/divine.jpg' },
 
-  { name: 'Engr. Chijioke Henry Okoroego', role: 'Science & Innovation Manager', image: '/team/chijioke.jpg' },
+  { name: 'Engr. Chijioke Henry Okoroego', role: 'Science & Innovation Advisor', image: '/team/chijioke.jpg' },
 
   { name: 'Aniefiok Philip Ikpe', role: 'Community & Capacity Officer', image: '/team/aniefiok.jpg' },
 
