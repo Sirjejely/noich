@@ -2,23 +2,21 @@ export default function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="relative mt-24 overflow-hidden border-t border-cyan-300/10 bg-slate-950">
+    <footer className="relative mt-16 overflow-hidden border-t border-cyan-300/10 bg-slate-950">
       {/* Custom animations without styled-jsx */}
       <div className="pointer-events-none absolute inset-0">
-        <div className="absolute -top-32 left-10 h-72 w-72 rounded-full bg-cyan-500/15 blur-3xl" />
-        <div className="absolute top-20 right-0 h-96 w-96 rounded-full bg-blue-700/15 blur-3xl" />
-        <div className="absolute bottom-0 left-1/3 h-80 w-80 rounded-full bg-teal-500/10 blur-3xl" />
+        <div className="absolute -top-32 left-10 h-64 w-64 rounded-full bg-cyan-500/10 blur-3xl" />
+        <div className="absolute top-10 right-0 h-72 w-72 rounded-full bg-blue-700/10 blur-3xl" />
 
         <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-cyan-300/60 to-transparent" />
 
-        <div className="absolute bottom-0 left-0 right-0 h-40 opacity-20">
-          <div className="absolute -left-[10%] bottom-2 h-[90px] w-[120%] rounded-[50%] border-t border-cyan-300/40 animate-[footerWaveMove_8s_ease-in-out_infinite]" />
-          <div className="absolute -left-[10%] bottom-10 h-[90px] w-[120%] rounded-[50%] border-t border-teal-400/30 animate-[footerWaveMove_8s_ease-in-out_infinite_-3s]" />
+        <div className="absolute bottom-0 left-0 right-0 h-24 opacity-15">
+          <div className="absolute -left-[10%] bottom-0 h-[70px] w-[120%] rounded-[50%] border-t border-cyan-300/40 animate-[footerWaveMove_8s_ease-in-out_infinite]" />
         </div>
       </div>
 
-      <div className="relative max-w-7xl mx-auto px-6 lg:px-8 py-16">
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-10 text-sm md:text-base">
+      <div className="relative max-w-7xl mx-auto px-6 lg:px-8 py-10 md:py-12">
+        <div className="grid gap-8 text-sm md:grid-cols-2 md:text-base lg:grid-cols-4">
           {/* Brand */}
           <div>
             <div className="group flex items-center gap-3">
@@ -46,13 +44,12 @@ export default function Footer() {
               </div>
             </div>
 
-            <p className="mt-5 text-slate-300 leading-relaxed text-base">
-              Advancing ocean-based climate solutions through science,
-              innovation, capacity building, and partnerships across Nigeria,
-              West Africa, and the wider African continent.
+            <p className="mt-4 text-sm leading-relaxed text-slate-300 md:text-base">
+              Science, innovation and partnerships for practical ocean-climate
+              action across Africa.
             </p>
 
-            <div className="mt-6 inline-flex items-center gap-2 rounded-full border border-cyan-300/20 bg-white/5 px-4 py-2 text-cyan-100 shadow-lg shadow-cyan-950/20">
+            <div className="mt-4 inline-flex items-center gap-2 text-cyan-100">
               <span className="h-2 w-2 rounded-full bg-cyan-300 animate-pulse" />
               <span className="text-sm">Science • Innovation • Partnership</span>
             </div>
@@ -60,11 +57,13 @@ export default function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h4 className="text-lg font-semibold text-white mb-5">Quick Links</h4>
+            <h4 className="flex items-center gap-3 text-lg font-semibold text-white mb-5">
+              <span className="h-6 w-1 rounded-full bg-gradient-to-b from-cyan-300 to-blue-500" />
+              Quick Links
+            </h4>
             <ul className="space-y-3 text-slate-300">
               {[
                 { name: 'Home', href: '/' },
-                { name: 'About', href: '/about' },
                 { name: 'Our Work', href: '/work' },
                 { name: 'Team', href: '/team' },
                 { name: 'News', href: '/news' },
@@ -85,10 +84,13 @@ export default function Footer() {
 
           {/* Contact */}
           <div>
-            <h4 className="text-lg font-semibold text-white mb-5">Contact</h4>
-            <ul className="space-y-4 text-slate-300">
+            <h4 className="flex items-center gap-3 text-lg font-semibold text-white mb-5">
+              <span className="h-6 w-1 rounded-full bg-gradient-to-b from-cyan-300 to-teal-500" />
+              Contact
+            </h4>
+            <ul className="space-y-3 text-slate-300">
               <li className="flex items-start gap-3">
-                <span className="mt-1 text-cyan-300">✉</span>
+                <span className="mt-0.5 text-cyan-300">✉</span>
                 <a
                   href="mailto:info@nocih.org"
                   className="hover:text-cyan-300 transition"
@@ -98,17 +100,17 @@ export default function Footer() {
               </li>
 
               <li className="flex items-start gap-3">
-                <span className="mt-1 text-cyan-300">📍</span>
+                <span className="mt-0.5 text-cyan-300">📍</span>
                 <span>Calabar, Nigeria</span>
               </li>
 
               <li className="flex items-start gap-3">
-                <span className="mt-1 text-cyan-300">📍</span>
+                <span className="mt-0.5 text-cyan-300">📍</span>
                 <span>Uyo, Nigeria</span>
               </li>
 
               <li className="flex items-start gap-3">
-                <span className="mt-1 text-cyan-300">🌍</span>
+                <span className="mt-0.5 text-cyan-300">🌍</span>
                 <span>Africa-focused ocean-climate innovation</span>
               </li>
             </ul>
@@ -116,11 +118,14 @@ export default function Footer() {
 
           {/* Socials */}
           <div>
-            <h4 className="text-lg font-semibold text-white mb-5">Follow Us</h4>
+            <h4 className="flex items-center gap-3 text-lg font-semibold text-white mb-5">
+              <span className="h-6 w-1 rounded-full bg-gradient-to-b from-blue-400 to-teal-400" />
+              Follow Us
+            </h4>
 
-            <p className="mb-5 text-slate-300 leading-relaxed">
-              Connect with NOCIH-Africa for updates on ocean-climate action,
-              marine innovation, blue carbon, and community engagement.
+            <p className="mb-4 text-sm leading-relaxed text-slate-300 md:text-base">
+              Follow our ocean-climate research, innovation and community
+              activities.
             </p>
 
             <div className="flex gap-4">
@@ -129,7 +134,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="NOCIH-Africa on X"
-                className="group relative overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-3 transition duration-300 hover:-translate-y-1 hover:border-cyan-300/40 hover:bg-cyan-500/15"
+                className="group relative overflow-hidden rounded-xl border border-white/10 bg-white/5 p-2.5 transition duration-300 hover:-translate-y-1 hover:border-cyan-300/40 hover:bg-cyan-500/15"
               >
                 <span className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/15 to-transparent transition-transform duration-700 group-hover:translate-x-full" />
                 <svg className="relative w-5 h-5 fill-white" viewBox="0 0 24 24">
@@ -142,7 +147,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="NOCIH-Africa on Facebook"
-                className="group relative overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-3 transition duration-300 hover:-translate-y-1 hover:border-cyan-300/40 hover:bg-cyan-500/15"
+                className="group relative overflow-hidden rounded-xl border border-white/10 bg-white/5 p-2.5 transition duration-300 hover:-translate-y-1 hover:border-cyan-300/40 hover:bg-cyan-500/15"
               >
                 <span className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/15 to-transparent transition-transform duration-700 group-hover:translate-x-full" />
                 <svg className="relative w-5 h-5 fill-white" viewBox="0 0 24 24">
@@ -155,7 +160,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="NOCIH-Africa on LinkedIn"
-                className="group relative overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-3 transition duration-300 hover:-translate-y-1 hover:border-cyan-300/40 hover:bg-cyan-500/15"
+                className="group relative overflow-hidden rounded-xl border border-white/10 bg-white/5 p-2.5 transition duration-300 hover:-translate-y-1 hover:border-cyan-300/40 hover:bg-cyan-500/15"
               >
                 <span className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/15 to-transparent transition-transform duration-700 group-hover:translate-x-full" />
                 <svg className="relative w-5 h-5 fill-white" viewBox="0 0 24 24">
@@ -166,46 +171,35 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* CTA strip */}
-        <div className="mt-14 rounded-3xl border border-cyan-300/15 bg-gradient-to-r from-cyan-500/10 via-blue-500/10 to-teal-500/10 p-6 md:p-8 shadow-2xl shadow-cyan-950/20">
-          <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-5">
-            <div>
-              <h4 className="text-xl md:text-2xl font-bold text-white">
-                Building Africa’s ocean-climate innovation future
-              </h4>
-              <p className="mt-2 text-slate-300 leading-relaxed">
-                Through research, workshops, awareness creation, innovative
-                technology, partnership, and community engagement.
+        {/* Bottom */}
+        <div className="mt-8 border-t border-white/10 pt-6">
+          <div className="flex flex-col items-center justify-between gap-4 text-sm text-slate-400 lg:flex-row">
+            <div className="text-center md:text-left">
+              <p>
+                © {year} Novel Ocean-Climate Innovation Hydro-Initiative{' '}
+                <span className="text-slate-300">(NOCIH-Africa)</span>.
+              </p>
+              <p className="mt-1 text-xs text-slate-500 md:text-sm">
+                All rights reserved.
               </p>
             </div>
 
-            <a
-              href="/contact"
-              className="group inline-flex w-fit items-center gap-2 rounded-full border border-cyan-300/30 bg-cyan-400/10 px-6 py-3 text-cyan-100 font-semibold transition duration-300 hover:-translate-y-1 hover:bg-cyan-400/20 hover:border-cyan-200/60"
-            >
-              Partner with us
-              <span className="transition-transform duration-300 group-hover:translate-x-1">
-                →
+            <div className="inline-flex items-center gap-2 rounded-full border border-emerald-300/15 bg-emerald-400/[0.07] px-4 py-2 text-xs text-emerald-100 md:text-sm">
+              <span className="flex h-5 w-5 items-center justify-center rounded-full bg-emerald-400/15 text-emerald-200">
+                ✓
               </span>
-            </a>
-          </div>
-        </div>
+              CAC Reg. No. 9684356
+            </div>
 
-        {/* Bottom */}
-        <div className="mt-10 pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-4 text-slate-400 text-sm md:text-base">
-          <p className="text-center md:text-left">
-            © {year} Novel Ocean-Climate Innovation Hydro-Initiative{' '}
-            <span className="text-slate-300">(NOCIH-Africa)</span>. All rights reserved.
-          </p>
-
-          <div className="flex items-center gap-3 text-sm">
-            <a href="/privacy" className="hover:text-cyan-300 transition">
-              Privacy
-            </a>
-            <span className="text-slate-600">•</span>
-            <a href="/contact" className="hover:text-cyan-300 transition">
-              Contact
-            </a>
+            <div className="flex items-center gap-3 text-sm">
+              <a href="/privacy" className="hover:text-cyan-300 transition">
+                Privacy
+              </a>
+              <span className="text-slate-600">•</span>
+              <a href="/contact" className="hover:text-cyan-300 transition">
+                Contact
+              </a>
+            </div>
           </div>
         </div>
       </div>

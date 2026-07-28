@@ -102,6 +102,10 @@ export default function AboutPage() {
               Established: January 2026
             </span>
 
+            <span className="px-5 py-3 rounded-full text-sm md:text-base border border-emerald-300/30 bg-emerald-400/10 backdrop-blur-md text-emerald-100">
+              CAC Registration No. 9684356
+            </span>
+
             <span className="px-5 py-3 rounded-full text-sm md:text-base border border-white/10 bg-slate-950/50 backdrop-blur-md text-slate-100">
               Based in Calabar, Nigeria
             </span>
@@ -177,6 +181,41 @@ export default function AboutPage() {
                 accelerate technological and nature-based responses to
                 ocean-climate challenges.
               </p>
+            </div>
+          </div>
+        </div>
+
+        {/* Legal Status */}
+        <div className="relative mt-8 overflow-hidden rounded-[2rem] border border-emerald-300/20 bg-gradient-to-r from-emerald-500/10 via-cyan-500/10 to-blue-500/10 p-7 md:p-10 text-center shadow-2xl shadow-emerald-950/20 backdrop-blur-xl">
+          <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-emerald-300/70 to-transparent" />
+          <div className="pointer-events-none absolute -right-20 -top-20 h-64 w-64 rounded-full bg-emerald-400/10 blur-3xl" />
+
+          <div className="relative mx-auto max-w-4xl">
+            <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-2xl border border-emerald-300/25 bg-emerald-400/10 text-3xl shadow-lg shadow-emerald-950/20">
+              ✓
+            </div>
+
+            <span className="mt-5 inline-flex rounded-full border border-emerald-300/20 bg-emerald-400/10 px-4 py-2 text-sm font-medium text-emerald-100">
+              Legal Status
+            </span>
+
+            <h2 className="mt-5 text-3xl md:text-4xl font-black">
+              Incorporated in Nigeria
+            </h2>
+
+            <p className="mt-5 text-slate-200 text-lg md:text-xl leading-relaxed">
+              Novel Ocean-Climate Innovation Hydro-Initiative{' '}
+              <span className="font-semibold text-cyan-200">(NOCIH-Africa)</span>{' '}
+              is incorporated in Nigeria and registered with the Corporate
+              Affairs Commission (CAC).
+            </p>
+
+            <div className="mt-6 inline-flex flex-col sm:flex-row items-center gap-2 sm:gap-3 rounded-2xl border border-white/10 bg-slate-950/40 px-6 py-4">
+              <span className="text-slate-300">CAC Registration Number</span>
+              <span className="hidden sm:inline text-cyan-300">•</span>
+              <span className="text-xl md:text-2xl font-black tracking-wider text-emerald-200">
+                9684356
+              </span>
             </div>
           </div>
         </div>
